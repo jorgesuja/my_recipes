@@ -1,24 +1,16 @@
-# README
+# My recipes
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Code for the My Recipes app data API. It's just a simple rails-api app.
 
-Things you may want to cover:
+## Running it locally
 
-* Ruby version
+In order to get the application running locally, you first need to run the docker container of the database. To do this, you will need to have installed *docker* and *docker-compose* on your machine. 
 
-* System dependencies
+Then simply run `docker-compose up`, this will start the postrgres docker image and the pgAdmin image, to provide better control over the database.
 
-* Configuration
+Now you are ready to start the app invoking `rails s` as always.
 
-* Database creation
+## Database creation / Initialization
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+With the docker image running, invoke `rake db:migrate`, this will run the database migrations to create the needed tables.
+There is also a seed file that will generate random recipes, use `rake db:seed`.
